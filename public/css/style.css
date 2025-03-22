@@ -1,0 +1,103 @@
+body {
+    background-color: #f8f9fa;
+    padding-bottom: 2rem;
+}
+
+.terminal {
+    background-color: #212529;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    /* white-space: pre-wrap;
+    word-break: break-word; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.terminal #output {
+    width: 100%;
+}
+
+.terminal .stdout,
+.terminal .stderr,
+.terminal .success-message,
+.terminal .error-message {
+    text-align: left;
+    margin-bottom: 0.25rem;
+    width: 100%;
+    display: block;
+}
+
+.terminal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal::-webkit-scrollbar-track {
+    background: #343a40;
+}
+
+.terminal::-webkit-scrollbar-thumb {
+    background-color: #6c757d;
+    border-radius: 4px;
+}
+
+.script-item {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.script-item:hover {
+    background-color: #f1f8ff;
+}
+
+.script-item.active {
+    background-color: #e7f5ff;
+    border-color: #74c0fc;
+    font-weight: bold;
+    color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.stdout {
+    color: #fff;
+}
+
+.stderr {
+    color: #ff6b6b;
+}
+
+.success-message {
+    color: #69db7c;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* Add animation for executing */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.executing {
+    animation: blink 1.5s ease-in-out infinite;
+}
